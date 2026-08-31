@@ -42,10 +42,6 @@ body {
     padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* =========================
-   HLAVNÍ OBSAH
-========================= */
-
 .main {
     flex: 1;
 
@@ -61,10 +57,6 @@ body {
 .top-space {
     flex: 1;
 }
-
-/* =========================
-   JARVIS CORE
-========================= */
 
 .core {
     position: relative;
@@ -102,8 +94,6 @@ body {
     );
 }
 
-/* SVG kruhy */
-
 .ring {
     position: absolute;
 
@@ -112,8 +102,6 @@ body {
 
     transform: translate(-50%, -50%);
 }
-
-/* Vnější kruh */
 
 .outer {
     width: 285px;
@@ -125,8 +113,6 @@ body {
     stroke: rgba(0,255,255,.35);
     stroke-width: 1;
 }
-
-/* Vnější segmenty */
 
 .outer-segment {
     width: 270px;
@@ -155,8 +141,6 @@ body {
         rotate(var(--r1));
 }
 
-/* Střední kruh */
-
 .middle {
     width: 205px;
     height: 205px;
@@ -171,8 +155,6 @@ body {
     stroke: rgba(0,255,255,.65);
     stroke-width: 2;
 }
-
-/* Vnitřní segmenty */
 
 .inner {
     width: 190px;
@@ -191,8 +173,6 @@ body {
         translate(-50%, -50%)
         rotate(calc(var(--r1) * -1));
 }
-
-/* Centrální záře */
 
 .center-glow {
     position: absolute;
@@ -218,8 +198,6 @@ body {
     );
 }
 
-/* Bílé jádro */
-
 .core-center {
     position: absolute;
 
@@ -240,10 +218,6 @@ body {
         0 0 20px cyan,
         0 0 35px rgba(0,255,255,.8);
 }
-
-/* =========================
-   TEXT
-========================= */
 
 .title {
     margin-top: 8px;
@@ -309,10 +283,6 @@ body {
     flex: 1;
 }
 
-/* =========================
-   VSTUP
-========================= */
-
 .input-area {
     width: 100%;
     max-width: 520px;
@@ -356,10 +326,6 @@ body {
     color: rgba(255,255,255,.45);
 }
 
-/* =========================
-   TLAČÍTKA
-========================= */
-
 .button {
     width: 50px;
     height: 50px;
@@ -395,8 +361,6 @@ body {
         0 0 15px rgba(0,255,255,.5);
 }
 
-/* SVG mikrofon */
-
 .mic-svg {
     width: 24px;
     height: 24px;
@@ -410,8 +374,6 @@ body {
     stroke-linejoin: round;
 }
 
-/* šipka */
-
 .send {
     border: none;
 
@@ -424,10 +386,6 @@ body {
     background: #555;
     opacity: .65;
 }
-
-/* =========================
-   MENŠÍ IPHONE
-========================= */
 
 @media (max-height: 700px) {
 
@@ -477,274 +435,178 @@ body {
 
 <div class="main">
 
-    <div class="top-space"></div>
+<div class="top-space"></div>
 
-    <!-- =========================
-         JARVIS KULIČKA
-    ========================== -->
+<div class="core" id="core">
 
-    <div
-        class="core"
-        id="core"
-    >
+<div class="glow"></div>
 
-        <div class="glow"></div>
+<svg class="ring outer" viewBox="0 0 285 285">
+<circle cx="142.5" cy="142.5" r="142"/>
+</svg>
 
+<svg class="ring outer-segment" viewBox="0 0 270 270">
+<circle
+cx="135"
+cy="135"
+r="128"
+fill="none"
+stroke="rgba(0,255,255,.9)"
+stroke-width="3"
+stroke-linecap="round"
+stroke-dasharray="185 815"
+pathLength="1000"
+/>
+</svg>
 
-        <!-- Vnější kruh -->
+<svg class="ring outer-segment-2" viewBox="0 0 270 270">
+<circle
+cx="135"
+cy="135"
+r="128"
+fill="none"
+stroke="rgba(0,255,255,.8)"
+stroke-width="2"
+stroke-linecap="round"
+stroke-dasharray="125 875"
+stroke-dashoffset="-480"
+pathLength="1000"
+/>
+</svg>
 
-        <svg
-            class="ring outer"
-            viewBox="0 0 285 285"
-        >
-            <circle
-                cx="142.5"
-                cy="142.5"
-                r="142"
-            />
-        </svg>
+<svg class="ring outer-segment-3" viewBox="0 0 270 270">
+<circle
+cx="135"
+cy="135"
+r="128"
+fill="none"
+stroke="rgba(40,120,255,.9)"
+stroke-width="3"
+stroke-linecap="round"
+stroke-dasharray="100 900"
+stroke-dashoffset="-780"
+pathLength="1000"
+/>
+</svg>
 
+<svg class="ring middle" viewBox="0 0 205 205">
+<circle cx="102.5" cy="102.5" r="100"/>
+</svg>
 
-        <!-- Vnější segment 1 -->
+<svg class="ring inner" viewBox="0 0 190 190">
+<circle
+cx="95"
+cy="95"
+r="92"
+fill="none"
+stroke="rgba(0,120,255,.9)"
+stroke-width="4"
+stroke-linecap="round"
+stroke-dasharray="150 850"
+stroke-dashoffset="-120"
+pathLength="1000"
+/>
+</svg>
 
-        <svg
-            class="ring outer-segment"
-            viewBox="0 0 270 270"
-        >
-            <circle
-                cx="135"
-                cy="135"
-                r="128"
-                fill="none"
-                stroke="rgba(0,255,255,.9)"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-dasharray="185 815"
-                pathLength="1000"
-            />
-        </svg>
+<svg class="ring inner-2" viewBox="0 0 190 190">
+<circle
+cx="95"
+cy="95"
+r="92"
+fill="none"
+stroke="rgba(0,255,255,.7)"
+stroke-width="2"
+stroke-linecap="round"
+stroke-dasharray="155 845"
+stroke-dashoffset="-580"
+pathLength="1000"
+/>
+</svg>
 
+<div class="center-glow"></div>
 
-        <!-- Vnější segment 2 -->
+<div class="core-center"></div>
 
-        <svg
-            class="ring outer-segment-2"
-            viewBox="0 0 270 270"
-        >
-            <circle
-                cx="135"
-                cy="135"
-                r="128"
-                fill="none"
-                stroke="rgba(0,255,255,.8)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-dasharray="125 875"
-                stroke-dashoffset="-480"
-                pathLength="1000"
-            />
-        </svg>
+</div>
 
+<div class="title">
+JARVIS
+</div>
 
-        <!-- Vnější segment 3 -->
+<div class="status" id="status">
+PŘIPRAVEN
+</div>
 
-        <svg
-            class="ring outer-segment-3"
-            viewBox="0 0 270 270"
-        >
-            <circle
-                cx="135"
-                cy="135"
-                r="128"
-                fill="none"
-                stroke="rgba(40,120,255,.9)"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-dasharray="100 900"
-                stroke-dashoffset="-780"
-                pathLength="1000"
-            />
-        </svg>
+<div class="recognized" id="recognized">
+ŘEKNI NĚCO…
+</div>
 
+<div class="response" id="response"></div>
 
-        <!-- Střední kruh -->
+<div class="bottom-space"></div>
 
-        <svg
-            class="ring middle"
-            viewBox="0 0 205 205"
-        >
-            <circle
-                cx="102.5"
-                cy="102.5"
-                r="100"
-            />
-        </svg>
+<div class="input-area">
 
+<textarea
+id="textBox"
+class="text-box"
+rows="1"
+placeholder="Napiš JARVISovi…"
+></textarea>
 
-        <!-- Vnitřní segment 1 -->
+<button
+id="micButton"
+class="button mic"
+aria-label="Mikrofon"
+>
 
-        <svg
-            class="ring inner"
-            viewBox="0 0 190 190"
-        >
-            <circle
-                cx="95"
-                cy="95"
-                r="92"
-                fill="none"
-                stroke="rgba(0,120,255,.9)"
-                stroke-width="4"
-                stroke-linecap="round"
-                stroke-dasharray="150 850"
-                stroke-dashoffset="-120"
-                pathLength="1000"
-            />
-        </svg>
+<svg
+class="mic-svg"
+viewBox="0 0 24 24"
+>
 
+<rect
+x="9"
+y="3"
+width="6"
+height="11"
+rx="3"
+/>
 
-        <!-- Vnitřní segment 2 -->
+<path d="M5 11a7 7 0 0 0 14 0"/>
 
-        <svg
-            class="ring inner-2"
-            viewBox="0 0 190 190"
-        >
-            <circle
-                cx="95"
-                cy="95"
-                r="92"
-                fill="none"
-                stroke="rgba(0,255,255,.7)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-dasharray="155 845"
-                stroke-dashoffset="-580"
-                pathLength="1000"
-            />
-        </svg>
+<path d="M12 18v3"/>
 
+<path d="M9 21h6"/>
 
-        <!-- Centrální záře -->
+</svg>
 
-        <div class="center-glow"></div>
+</button>
 
+<button
+id="sendButton"
+class="button send"
+aria-label="Odeslat"
+>
+↑
+</button>
 
-        <!-- Bílé jádro -->
-
-        <div class="core-center"></div>
-
-    </div>
-
-
-    <!-- =========================
-         TEXT
-    ========================== -->
-
-    <div class="title">
-        JARVIS
-    </div>
-
-    <div
-        class="status"
-        id="status"
-    >
-        PŘIPRAVEN
-    </div>
-
-    <div
-        class="recognized"
-        id="recognized"
-    >
-        ŘEKNI NĚCO…
-    </div>
-
-    <div
-        class="response"
-        id="response"
-    ></div>
-
-
-    <div class="bottom-space"></div>
-
-
-    <!-- =========================
-         PSANÍ + MIKROFON + ODESLAT
-    ========================== -->
-
-    <div class="input-area">
-
-        <textarea
-            id="textBox"
-            class="text-box"
-            rows="1"
-            placeholder="Napiš JARVISovi…"
-        ></textarea>
-
-
-        <button
-            id="micButton"
-            class="button mic"
-            aria-label="Mikrofon"
-        >
-
-            <svg
-                class="mic-svg"
-                viewBox="0 0 24 24"
-            >
-
-                <rect
-                    x="9"
-                    y="3"
-                    width="6"
-                    height="11"
-                    rx="3"
-                />
-
-                <path
-                    d="M5 11a7 7 0 0 0 14 0"
-                />
-
-                <path
-                    d="M12 18v3"
-                />
-
-                <path
-                    d="M9 21h6"
-                />
-
-            </svg>
-
-        </button>
-
-
-        <button
-            id="sendButton"
-            class="button send"
-            aria-label="Odeslat"
-        >
-            ↑
-        </button>
-
-    </div>
+</div>
 
 </div>
 
 </div>
 
 
-<script>
+<!-- ==================================================
+     WEBLLM
+================================================== -->
 
-/* =========================
-   PROMĚNNÉ
-========================= */
+<script type="module">
 
-let isListening = false;
-
-let recognition = null;
-
-let rotation1 = 0;
-let rotation2 = 0;
-
-let lastTime = performance.now();
+import {
+    CreateMLCEngine
+} from "https://esm.run/@mlc-ai/web-llm";
 
 
 /* =========================
@@ -777,6 +639,13 @@ const textBox =
    ANIMACE KULIČKY
 ========================= */
 
+let isThinking = false;
+
+let rotation1 = 0;
+let rotation2 = 0;
+
+let lastTime = performance.now();
+
 function animate(time) {
 
     const delta =
@@ -784,28 +653,15 @@ function animate(time) {
 
     lastTime = time;
 
-
-    /*
-       Stejně jako ve Swiftu:
-
-       normálně:
-       360° / 8 sekund
-
-       poslouchání:
-       360° / 4 sekundy
-    */
-
     const speed1 =
-        isListening
-        ? 360 / 4
-        : 360 / 8;
-
+        isThinking
+        ? 90
+        : 45;
 
     const speed2 =
-        isListening
-        ? -360 / 2.5
-        : -360 / 5;
-
+        isThinking
+        ? -144
+        : -72;
 
     rotation1 +=
         speed1 * delta;
@@ -813,33 +669,13 @@ function animate(time) {
     rotation2 +=
         speed2 * delta;
 
-
-    if (rotation1 >= 360)
-        rotation1 -= 360;
-
-    if (rotation2 <= -360)
-        rotation2 += 360;
-
-
-    /*
-       Swift pulse:
-
-       připraven:
-       1.05
-
-       poslouchám:
-       1.12
-    */
-
     const pulse =
         1 +
-        Math.sin(
-            time / 1000 *
-            Math.PI *
-            (isListening ? 0.8 : 0.55)
-        ) *
-        (isListening ? 0.12 : 0.05);
-
+        Math.sin(time / 1000 *
+        Math.PI *
+        (isThinking ? 1.6 : 0.55))
+        *
+        (isThinking ? .12 : .05);
 
     core.style.setProperty(
         "--r1",
@@ -856,233 +692,205 @@ function animate(time) {
         pulse
     );
 
-
-    requestAnimationFrame(
-        animate
-    );
+    requestAnimationFrame(animate);
 }
 
-requestAnimationFrame(
-    animate
-);
+requestAnimationFrame(animate);
+
+
+/* ==================================================
+   LOKÁLNÍ AI
+================================================== */
+
+/*
+   POZNÁMKA:
+
+   Tento název musí být model podporovaný
+   aktuální verzí WebLLM.
+
+   Pokud ho tvoje verze WebLLM nepřijme,
+   vypíšeme chybu místo falešné odpovědi.
+*/
+
+const MODEL =
+    "gemma-3-4b-it-q4f16_1-MLC";
+
+
+let engine = null;
+
+let modelReady = false;
 
 
 /* =========================
-   STATUS
+   NAČTENÍ MODELU
 ========================= */
 
-function updateStatus() {
+async function loadAI() {
 
-    if (isListening) {
+    status.textContent =
+        "NAČÍTÁM MOZEK";
+
+    response.textContent =
+        "Připravuji lokální AI…";
+
+    isThinking = true;
+
+
+    try {
+
+        engine =
+            await CreateMLCEngine(
+                MODEL,
+                {
+                    initProgressCallback:
+                        function(progress) {
+
+                            const percent =
+                                Math.round(
+                                    progress.progress *
+                                    100
+                                );
+
+                            status.textContent =
+                                "MOZEK " +
+                                percent +
+                                "%";
+                        }
+                }
+            );
+
+
+        modelReady = true;
+
+        response.textContent =
+            "Lokální AI je připravena.";
 
         status.textContent =
-            "POSLOUCHÁM";
+            "PŘIPRAVEN";
 
-        micButton.classList.add(
-            "listening"
-        );
+    } catch (error) {
 
-    } else {
+        console.error(error);
 
-        micButton.classList.remove(
-            "listening"
-        );
+        response.textContent =
+            "Lokální model se nepodařilo načíst. " +
+            "Tato verze prohlížeče nebo WebLLM " +
+            "model pravděpodobně nepodporuje.";
 
-        if (
-            response.textContent.trim()
-        ) {
+        status.textContent =
+            "CHYBA MODELU";
 
-            status.textContent =
-                "JARVIS ODPOVÍDÁ";
+    } finally {
 
-        } else {
-
-            status.textContent =
-                "PŘIPRAVEN";
-        }
+        isThinking = false;
     }
 }
 
 
 /* =========================
-   SPEECH RECOGNITION
+   JARVIS AI
 ========================= */
 
-function setupRecognition() {
+async function askJarvis(text) {
 
-    const SpeechRecognition =
-        window.SpeechRecognition ||
-        window.webkitSpeechRecognition;
+    if (!modelReady) {
 
-
-    if (!SpeechRecognition) {
-
-        recognized.textContent =
-            "Rozpoznávání řeči není dostupné.";
+        response.textContent =
+            "JARVIS ještě načítá svůj mozek.";
 
         return;
     }
 
 
-    recognition =
-        new SpeechRecognition();
+    isThinking = true;
+
+    status.textContent =
+        "JARVIS PŘEMÝŠLÍ";
 
 
-    recognition.lang =
-        "cs-CZ";
+    try {
+
+        const result =
+            await engine.chat.completions.create({
+
+                messages: [
+
+                    {
+                        role: "system",
+
+                        content: `
+Jsi JARVIS, osobní AI asistent.
+
+Odpovídej vždy česky.
+
+Buď přirozený, inteligentní,
+stručný a užitečný.
+
+Mluv jako technologický osobní
+asistent, ne jako robot.
+
+Nikdy netvrď, že jsi člověk.
+
+Pokud otázce nerozumíš,
+zeptej se na upřesnění.
+
+Neopakuj zbytečně otázku uživatele.
+                        `
+                    },
+
+                    {
+                        role: "user",
+
+                        content: text
+                    }
+
+                ],
+
+                temperature: 0.7,
+
+                max_tokens: 300
+            });
 
 
-    recognition.continuous =
-        false;
+        const answer =
+            result.choices[0]
+                .message
+                .content
+                .trim();
 
 
-    recognition.interimResults =
-        true;
+        response.textContent =
+            answer;
 
 
-    recognition.onstart =
-        function() {
-
-            isListening =
-                true;
-
-            response.textContent =
-                "";
-
-            recognized.textContent =
-                "POSLOUCHÁM…";
-
-            updateStatus();
-        };
+        status.textContent =
+            "JARVIS ODPOVÍDÁ";
 
 
-    recognition.onresult =
-        function(event) {
-
-            let text = "";
+        speak(answer);
 
 
-            for (
-                let i = event.resultIndex;
-                i < event.results.length;
-                i++
-            ) {
+    } catch (error) {
 
-                text +=
-                    event.results[i][0]
-                        .transcript;
-            }
+        console.error(error);
 
+        response.textContent =
+            "Při komunikaci s lokálním modelem " +
+            "došlo k chybě.";
 
-            if (text.trim()) {
+        status.textContent =
+            "CHYBA";
 
-                recognized.textContent =
-                    text;
-            }
-        };
+    } finally {
 
-
-    recognition.onerror =
-        function(event) {
-
-            console.log(
-                "Speech error:",
-                event.error
-            );
-
-            isListening =
-                false;
-
-            updateStatus();
-
-
-            if (
-                event.error ===
-                "not-allowed"
-            ) {
-
-                recognized.textContent =
-                    "Povol mikrofon pro JARVISe.";
-
-            } else {
-
-                recognized.textContent =
-                    "ŘEKNI NĚCO…";
-            }
-        };
-
-
-    recognition.onend =
-        function() {
-
-            isListening =
-                false;
-
-            updateStatus();
-
-
-            const input =
-                recognized.textContent
-                    .trim();
-
-
-            if (
-                input &&
-                input !== "ŘEKNI NĚCO…" &&
-                input !== "POSLOUCHÁM…"
-            ) {
-
-                processMessage(
-                    input
-                );
-            }
-        };
+        isThinking = false;
+    }
 }
 
 
-/* =========================
-   MIKROFON
-========================= */
-
-micButton.addEventListener(
-    "click",
-    function() {
-
-        if (!recognition) {
-
-            alert(
-                "Rozpoznávání řeči není v Safari dostupné."
-            );
-
-            return;
-        }
-
-
-        if (isListening) {
-
-            recognition.stop();
-
-        } else {
-
-            recognized.textContent =
-                "ŘEKNI NĚCO…";
-
-            try {
-
-                recognition.start();
-
-            } catch (error) {
-
-                console.log(error);
-            }
-        }
-    }
-);
-
-
-/* =========================
+/* ==================================================
    TEXT
-========================= */
+================================================== */
 
 sendButton.addEventListener(
     "click",
@@ -1091,19 +899,18 @@ sendButton.addEventListener(
         const text =
             textBox.value.trim();
 
-
         if (!text)
             return;
 
-
         textBox.value = "";
 
-        processMessage(text);
+        recognized.textContent =
+            text;
+
+        askJarvis(text);
     }
 );
 
-
-/* Enter odešle */
 
 textBox.addEventListener(
     "keydown",
@@ -1122,128 +929,170 @@ textBox.addEventListener(
 );
 
 
-/* =========================
-   ZPRACOVÁNÍ
-========================= */
+/* ==================================================
+   DIKTOVÁNÍ
+================================================== */
 
-function processMessage(text) {
+let recognition = null;
 
-    recognized.textContent =
-        text;
+let isListening = false;
 
-    response.textContent =
-        "";
 
-    status.textContent =
-        "JARVIS PŘEMÝŠLÍ";
+const SpeechRecognition =
+    window.SpeechRecognition ||
+    window.webkitSpeechRecognition;
 
-    isListening =
+
+if (SpeechRecognition) {
+
+    recognition =
+        new SpeechRecognition();
+
+    recognition.lang =
+        "cs-CZ";
+
+    recognition.continuous =
+        false;
+
+    recognition.interimResults =
         true;
 
 
-    /*
-       ZATÍM TESTOVACÍ MOZEK.
-       SEM POZDĚJI NAPOJÍME
-       SKUTEČNÝ AI MODEL.
-    */
-
-    setTimeout(
+    recognition.onstart =
         function() {
 
-            let answer =
-                getTestAnswer(text);
+            isListening = true;
+
+            isThinking = false;
+
+            status.textContent =
+                "POSLOUCHÁM";
+
+            micButton.classList.add(
+                "listening"
+            );
+        };
 
 
-            response.textContent =
-                answer;
+    recognition.onresult =
+        function(event) {
 
-            isListening =
-                false;
+            let text = "";
 
-            updateStatus();
+            for (
+                let i = event.resultIndex;
+                i < event.results.length;
+                i++
+            ) {
 
-            speak(answer);
+                text +=
+                    event.results[i][0]
+                        .transcript;
+            }
 
-        },
-        700
-    );
-}
+            if (text.trim()) {
 
-
-/* =========================
-   TESTOVACÍ JARVIS
-========================= */
-
-function getTestAnswer(text) {
-
-    const input =
-        text.toLowerCase();
+                recognized.textContent =
+                    text;
+            }
+        };
 
 
-    if (
-        input.includes("ahoj")
-    ) {
+    recognition.onend =
+        function() {
 
-        return "Dobrý den. Jsem JARVIS. Jak vám mohu pomoci?";
-    }
+            isListening = false;
 
-
-    if (
-        input.includes("kdo jsi")
-    ) {
-
-        return "Jsem JARVIS, váš osobní AI asistent.";
-    }
-
-
-    if (
-        input.includes("jak se jmenuješ")
-    ) {
-
-        return "Jmenuji se JARVIS.";
-    }
-
-
-    if (
-        input.includes("jak se máš")
-    ) {
-
-        return "Funguji bez problémů. Všechny systémy jsou připraveny.";
-    }
-
-
-    if (
-        input.includes("kolik je hodin")
-    ) {
-
-        const time =
-            new Date().toLocaleTimeString(
-                "cs-CZ",
-                {
-                    hour: "2-digit",
-                    minute: "2-digit"
-                }
+            micButton.classList.remove(
+                "listening"
             );
 
-        return "Aktuální čas je " +
-               time +
-               ".";
-    }
+            const text =
+                recognized.textContent
+                    .trim();
 
 
-    return "Rozumím. Jsem připraven.";
+            if (
+                text &&
+                text !== "ŘEKNI NĚCO…"
+            ) {
+
+                askJarvis(text);
+            }
+        };
+
+
+    recognition.onerror =
+        function(error) {
+
+            console.log(error);
+
+            isListening = false;
+
+            micButton.classList.remove(
+                "listening"
+            );
+
+            status.textContent =
+                "PŘIPRAVEN";
+        };
+
 }
 
 
 /* =========================
-   HLAS
+   MIKROFON
 ========================= */
+
+micButton.addEventListener(
+    "click",
+    function() {
+
+        if (!recognition) {
+
+            alert(
+                "Tento prohlížeč nepodporuje diktování."
+            );
+
+            return;
+        }
+
+
+        if (isListening) {
+
+            recognition.stop();
+
+        } else {
+
+            recognized.textContent =
+                "ŘEKNI NĚCO…";
+
+            response.textContent =
+                "";
+
+            try {
+
+                recognition.start();
+
+            } catch (error) {
+
+                console.log(error);
+            }
+        }
+    }
+);
+
+
+/* ==================================================
+   HLAS
+================================================== */
 
 function speak(text) {
 
     if (
         !("speechSynthesis" in window)
     ) {
+
         return;
     }
 
@@ -1260,14 +1109,11 @@ function speak(text) {
     utterance.lang =
         "cs-CZ";
 
-
     utterance.rate =
         0.48;
 
-
     utterance.pitch =
         0.85;
-
 
     utterance.volume =
         1;
@@ -1279,13 +1125,11 @@ function speak(text) {
 }
 
 
-/* =========================
+/* ==================================================
    START
-========================= */
+================================================== */
 
-setupRecognition();
-
-updateStatus();
+loadAI();
 
 </script>
 
